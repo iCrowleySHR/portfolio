@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Silva - Desenvolvedor Full Stack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .skill-bar { transition: width 1s ease-in-out; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <!-- Header/Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-sm z-50 shadow-sm border-b border-gray-700">
+        <div class="max-w-6xl mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-xl md:text-2xl font-bold text-white">João Silva</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors">Início</a>
+                    <a href="#about" class="text-gray-300 hover:text-blue-400 transition-colors">Sobre</a>
+                    <a href="#projects" class="text-gray-300 hover:text-blue-400 transition-colors">Projetos</a>
+                    <a href="#education" class="text-gray-300 hover:text-blue-400 transition-colors">Formação</a>
+                    <a href="#certificates" class="text-gray-300 hover:text-blue-400 transition-colors">Certificados</a>
+                    <a href="#skills" class="text-gray-300 hover:text-blue-400 transition-colors">Habilidades</a>
+                    <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-colors">Contato</a>
+                </div>
+                <button id="mobile-menu" class="md:hidden text-gray-300 p-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-nav" class="hidden md:hidden mt-4 pb-4 border-t border-gray-700">
+                <div class="flex flex-col space-y-3 pt-4">
+                    <a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors text-sm">Início</a>
+                    <a href="#about" class="text-gray-300 hover:text-blue-400 transition-colors text-sm">Sobre</a>
+                    <a href="#projects" class="text-gray-300 hover:text-blue-400 transition-colors text-sm">Projetos</a>
+                    <a href="#education" class="text-gray-300 hover:text-blue-400 transition-colors text-sm">Formação</a>
+                    <a href="#certificates" class="text-gray-300 hover:text-blue-400 transition-colors text-sm">Certificados</a>
+                    <a href="#skills" class="text-gray-300 hover:text-blue-400 transition-colors text-sm">Habilidades</a>
+                    <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-colors text-sm">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center text-white pt-20 md:pt-0">
+        <div class="max-w-4xl mx-auto px-4 md:px-6 text-center">
+            <div class="w-24 h-24 md:w-32 md:h-32 mx-auto mb-6 md:mb-8 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                     alt="João Silva - Foto Profissional" 
+                     class="w-full h-full object-cover"
+                     onerror="this.src=''; this.alt='Foto não disponível'; this.style.display='none';">
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 fade-in">João Silva</h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 text-white/90 fade-in">Desenvolvedor Full Stack</p>
+            <p class="text-base md:text-lg mb-8 md:mb-12 text-white/80 max-w-2xl mx-auto fade-in px-4">
+                Transformo ideias em soluções digitais completas. Especialista em React, Node.js e tecnologias modernas.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center fade-in px-4">
+                <a href="#projects" class="bg-white text-orange-600 px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-sm md:text-base">
+                    Ver Projetos
+                </a>
+                <a href="https://drive.google.com/file/d/1234567890/view" target="_blank" class="bg-teal-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-teal-700 transition-colors flex items-center justify-center gap-2 text-sm md:text-base">
+                    📄 Baixar Currículo
+                </a>
+                <a href="#contact" class="border-2 border-white text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors text-sm md:text-base">
+                    Entre em Contato
+                </a>
+            </div>
+            
+            <!-- Social Media Icons -->
+            <div class="flex justify-center space-x-6 mt-12 fade-in">
+                <a href="https://linkedin.com/in/joaosilva" target="_blank" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors group">
+                    <svg class="w-6 h-6 text-white group-hover:text-blue-600 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/joaosilva" target="_blank" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors group">
+                    <svg class="w-6 h-6 text-white group-hover:text-gray-800 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://wa.me/5511999999999" target="_blank" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors group">
+                    <svg class="w-6 h-6 text-white group-hover:text-green-500 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                    </svg>
+                </a>
+                <a href="mailto:joao.silva@email.com" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors group">
+                    <svg class="w-6 h-6 text-white group-hover:text-red-500 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.749L12 10.724l9.615-6.903h.749c.904 0 1.636.732 1.636 1.636z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Sobre Mim</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Sou um desenvolvedor full stack apaixonado por criar experiências digitais excepcionais. 
+                        Com mais de 5 anos de experiência, trabalho com as tecnologias mais modernas do mercado.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Minha missão é transformar ideias complexas em soluções simples e eficientes, 
+                        sempre focando na experiência do usuário e na qualidade do código.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">React</span>
+                        <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">Node.js</span>
+                        <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">TypeScript</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-medium">Python</span>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Experiência</h3>
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-blue-500 pl-6">
+                                <h4 class="font-semibold text-gray-800">Senior Full Stack Developer</h4>
+                                <p class="text-gray-600">TechCorp • 2022 - Presente</p>
+                                <p class="text-sm text-gray-500 mt-2">Liderança técnica em projetos de grande escala</p>
+                            </div>
+                            <div class="border-l-4 border-green-500 pl-6">
+                                <h4 class="font-semibold text-gray-800">Full Stack Developer</h4>
+                                <p class="text-gray-600">StartupXYZ • 2020 - 2022</p>
+                                <p class="text-sm text-gray-500 mt-2">Desenvolvimento de aplicações web modernas</p>
+                            </div>
+                            <div class="border-l-4 border-purple-500 pl-6">
+                                <h4 class="font-semibold text-gray-800">Frontend Developer</h4>
+                                <p class="text-gray-600">WebAgency • 2019 - 2020</p>
+                                <p class="text-sm text-gray-500 mt-2">Criação de interfaces responsivas e interativas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Meus Projetos</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Aqui estão alguns dos projetos que desenvolvi, demonstrando minhas habilidades em diferentes tecnologias.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-6xl">
+                        🛒
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">E-commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">Plataforma completa de e-commerce com painel administrativo, pagamentos e gestão de estoque.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">React</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Node.js</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs">MongoDB</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://ecommerce-demo.joaosilva.dev" target="_blank" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-center">
+                                Ver Demo
+                            </a>
+                            <a href="https://github.com/joaosilva/ecommerce-platform" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors text-center">
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center text-white text-6xl">
+                        📊
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Dashboard Analytics</h3>
+                        <p class="text-gray-600 mb-4">Dashboard interativo para análise de dados com gráficos em tempo real e relatórios personalizados.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Vue.js</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">Python</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">PostgreSQL</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://dashboard-analytics.joaosilva.dev" target="_blank" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-center">
+                                Ver Demo
+                            </a>
+                            <a href="https://github.com/joaosilva/dashboard-analytics" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors text-center">
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white text-6xl">
+                        💬
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Chat Application</h3>
+                        <p class="text-gray-600 mb-4">Aplicativo de chat em tempo real com salas privadas, notificações e compartilhamento de arquivos.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">React</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Socket.io</span>
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs">Express</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://chat-app.joaosilva.dev" target="_blank" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-center">
+                                Ver Demo
+                            </a>
+                            <a href="https://github.com/joaosilva/chat-application" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors text-center">
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Formação Acadêmica</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Minha base educacional sólida que fundamenta minha expertise técnica.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl card-hover fade-in">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0">
+                            🎓
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Bacharelado em Ciência da Computação</h3>
+                            <p class="text-blue-600 font-medium mb-2">Universidade de São Paulo (USP)</p>
+                            <p class="text-gray-600 mb-3">2016 - 2020</p>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                Formação completa em fundamentos da computação, algoritmos, estruturas de dados, 
+                                engenharia de software e desenvolvimento de sistemas.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Algoritmos</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Banco de Dados</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Redes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-pink-100 p-8 rounded-2xl card-hover fade-in">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0">
+                            📚
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">MBA em Gestão de Projetos</h3>
+                            <p class="text-purple-600 font-medium mb-2">FGV - Fundação Getúlio Vargas</p>
+                            <p class="text-gray-600 mb-3">2021 - 2022</p>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                Especialização em metodologias ágeis, liderança de equipes técnicas e 
+                                gestão estratégica de projetos de tecnologia.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Scrum</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Liderança</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Estratégia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-2xl card-hover fade-in">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0">
+                            🌐
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Curso Técnico em Informática</h3>
+                            <p class="text-green-600 font-medium mb-2">ETEC - Centro Paula Souza</p>
+                            <p class="text-gray-600 mb-3">2014 - 2015</p>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                Base sólida em programação, desenvolvimento web e manutenção de sistemas, 
+                                proporcionando experiência prática desde cedo.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">HTML/CSS</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">JavaScript</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">PHP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-red-100 p-8 rounded-2xl card-hover fade-in">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-orange-600 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0">
+                            🌍
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Intercâmbio Acadêmico</h3>
+                            <p class="text-orange-600 font-medium mb-2">University of California, Berkeley</p>
+                            <p class="text-gray-600 mb-3">2019 (6 meses)</p>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                Experiência internacional focada em tecnologias emergentes, inteligência artificial 
+                                e desenvolvimento de software em ambiente multicultural.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs">Machine Learning</span>
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs">AI</span>
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs">Research</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Certificações</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Certificações que comprovam minha expertise e compromisso com a excelência técnica.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover fade-in border-l-4 border-blue-500">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-xl">
+                            ☁️
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">AWS Certified Solutions Architect</h3>
+                            <p class="text-sm text-gray-600">Amazon Web Services</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Certificação profissional em arquitetura de soluções na nuvem AWS.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">Válido até: Dez 2025</span>
+                        <a href="https://aws.amazon.com/verification/ABCD1234" target="_blank" class="text-blue-600 text-sm font-medium hover:text-blue-700">Ver Certificado</a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover fade-in border-l-4 border-green-500">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 text-xl">
+                            🐳
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Docker Certified Associate</h3>
+                            <p class="text-sm text-gray-600">Docker Inc.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Especialização em containerização e orquestração de aplicações.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">Válido até: Jun 2025</span>
+                        <a href="https://docker.com/certification/verify/EFGH5678" target="_blank" class="text-blue-600 text-sm font-medium hover:text-blue-700">Ver Certificado</a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover fade-in border-l-4 border-purple-500">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-xl">
+                            ⚛️
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">React Developer Certification</h3>
+                            <p class="text-sm text-gray-600">Meta (Facebook)</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Certificação oficial em desenvolvimento React e ecossistema.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">Válido até: Mar 2025</span>
+                        <a href="https://developers.facebook.com/certification/IJKL9012" target="_blank" class="text-blue-600 text-sm font-medium hover:text-blue-700">Ver Certificado</a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover fade-in border-l-4 border-yellow-500">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600 text-xl">
+                            🔒
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Certified Ethical Hacker</h3>
+                            <p class="text-sm text-gray-600">EC-Council</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Especialização em segurança cibernética e testes de penetração.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">Válido até: Set 2025</span>
+                        <a href="https://cert.eccouncil.org/verify/MNOP3456" target="_blank" class="text-blue-600 text-sm font-medium hover:text-blue-700">Ver Certificado</a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover fade-in border-l-4 border-red-500">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center text-red-600 text-xl">
+                            🎯
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Scrum Master Certified</h3>
+                            <p class="text-sm text-gray-600">Scrum Alliance</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Certificação em metodologias ágeis e liderança de equipes.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">Válido até: Nov 2024</span>
+                        <a href="https://scrumalliance.org/community/profile/QRST7890" target="_blank" class="text-blue-600 text-sm font-medium hover:text-blue-700">Ver Certificado</a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover fade-in border-l-4 border-indigo-500">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 text-xl">
+                            🚀
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Google Cloud Professional</h3>
+                            <p class="text-sm text-gray-600">Google Cloud</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Arquiteto de soluções certificado na plataforma Google Cloud.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">Válido até: Fev 2026</span>
+                        <a href="https://cloud.google.com/certification/verify/UVWX1234" target="_blank" class="text-blue-600 text-sm font-medium hover:text-blue-700">Ver Certificado</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Habilidades Técnicas</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Domino uma ampla gama de tecnologias modernas para desenvolvimento web completo.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8">Frontend</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">React / Next.js</span>
+                                <span class="text-gray-500">95%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full skill-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">TypeScript</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Tailwind CSS</span>
+                                <span class="text-gray-500">88%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full skill-bar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Vue.js</span>
+                                <span class="text-gray-500">85%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8">Backend</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Node.js / Express</span>
+                                <span class="text-gray-500">92%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="bg-green-600 h-3 rounded-full skill-bar" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Python / Django</span>
+                                <span class="text-gray-500">87%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="bg-green-600 h-3 rounded-full skill-bar" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">PostgreSQL / MongoDB</span>
+                                <span class="text-gray-500">85%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="bg-green-600 h-3 rounded-full skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">AWS / Docker</span>
+                                <span class="text-gray-500">80%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="bg-green-600 h-3 rounded-full skill-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Vamos Trabalhar Juntos?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Estou sempre aberto a novos desafios e oportunidades. Entre em contato para discutirmos seu próximo projeto.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Informações de Contato</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <a href="mailto:joao.silva@email.com" class="flex items-center space-x-4 bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-xl">
+                                📧
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-800">Email</p>
+                                <p class="text-gray-600">joao.silva@email.com</p>
+                            </div>
+                        </a>
+                        <a href="tel:+5511999999999" class="flex items-center space-x-4 bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 text-xl">
+                                📱
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-800">Telefone</p>
+                                <p class="text-gray-600">+55 (11) 99999-9999</p>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/joaosilva" target="_blank" class="flex items-center space-x-4 bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-xl">
+                                💼
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-800">LinkedIn</p>
+                                <p class="text-gray-600">linkedin.com/in/joaosilva</p>
+                            </div>
+                        </a>
+                        <a href="https://github.com/joaosilva" target="_blank" class="flex items-center space-x-4 bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                            <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600 text-xl">
+                                🐙
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-800">GitHub</p>
+                                <p class="text-gray-600">github.com/joaosilva</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">João Silva</h3>
+                <p class="text-gray-400 mb-6">Desenvolvedor Full Stack • Transformando ideias em realidade digital</p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-2xl">💼</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-2xl">🐙</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-2xl">📧</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-2xl">📱</a>
+                </div>
+                <p class="text-gray-500 text-sm">
+                    © 2024 João Silva. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNav = document.getElementById('mobile-nav');
+        
+        mobileMenu.addEventListener('click', function() {
+            mobileNav.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.add('hidden');
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+
+
+
+
+        // Skill bars animation
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+        }
+
+        // Trigger skill bars animation when skills section is visible
+        const skillsSection = document.getElementById('skills');
+        const skillsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    skillsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillsObserver.observe(skillsSection);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97db4e4213dac700',t:'MTc1NzYzNzEyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
