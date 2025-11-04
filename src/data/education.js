@@ -1,7 +1,7 @@
 export const education = [
 {
     title: "Tecnólogo em Desenvolvimento de Software Multiplataforma",
-    school: "Fatec Ciuliano Checcetini - Franco da Rocha",
+    school: "Fatec Giuliano Checcetini - Franco da Rocha",
     year: "2025 - 2027",
     description: "Formação completa em desenvolvimento de sistemas para múltiplas plataformas, abrangendo web, mobile e cloud. Curso integrou tecnologias modernas como IoT, machine learning, bancos de dados relacionais e não relacionais, segurança e engenharia de software.",
     tags: ["Desenvolvimento Web", "Mobile", "Cloud Computing", "IoT", "Machine Learning", "Banco de Dados", "APIs", "UX/UI"],

@@ -186,5 +186,12 @@ export const otherSkills = [
     level: 75,
     icon: "https://skillicons.dev/icons?i=ae",
     category: "Motion Design"
+  },
+  {
+    name: "Kubernetes",
+    value: "70%",
+    level: 70,
+    icon: "https://skillicons.dev/icons?i=k8s",
+    category: "DevOps"
   }
 ];
