@@ -7,7 +7,7 @@ export const profile = {
   clientSatisfaction: "100%",
   description:
     "Transformo ideias em soluções digitais completas. Especialista em React, AWS, Laravel e tecnologias modernas.",
-  image:"../../public/images/profile/icrowleyshr.jpeg",
+  image:"../../public/images/profile/icrowleyshr.png",
   buttons: [
     {
       text: "Ver Projetos",

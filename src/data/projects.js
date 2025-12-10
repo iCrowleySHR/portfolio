@@ -5,6 +5,7 @@ export const projects = {
      "APITaskTea",
      "Good-tech",
      "api_notepad",
+     "App-TaskTea",
      "testeTecnicoFrontCoreLab"
    ]
 }
