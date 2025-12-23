@@ -72,9 +72,6 @@ Formação técnica integrada ao Ensino Médio com ênfase em desenvolvimento we
 - **Network Technician Career Path** – Cisco Networking Academy
 - **Python Essentials 2** – Cisco Networking Academy
 
-## 📂 Projetos em Destaque
-
-> *Nota: Os projetos são carregados automaticamente do GitHub. Para adicionar descrições personalizadas aqui, edite esta seção manualmente.*
 
 ## 🚀 Como Executar Este Projeto (Localmente)
 
